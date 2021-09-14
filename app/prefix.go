@@ -9,11 +9,11 @@ const (
 )
 
 var (
-	AccountPubKeyPrefix    = AccountAddressPrefix + "pub"
-	ValidatorAddressPrefix = AccountAddressPrefix + "valoper"
-	ValidatorPubKeyPrefix  = AccountAddressPrefix + "valoperpub"
-	ConsNodeAddressPrefix  = AccountAddressPrefix + "valcons"
-	ConsNodePubKeyPrefix   = AccountAddressPrefix + "valconspub"
+	AccountPubKeyPrefix    = AccountAddressPrefix + "p"
+	ValidatorAddressPrefix = AccountAddressPrefix + "v"
+	ValidatorPubKeyPrefix  = AccountAddressPrefix + "vp"
+	ConsNodeAddressPrefix  = AccountAddressPrefix + "vc"
+	ConsNodePubKeyPrefix   = AccountAddressPrefix + "vcp"
 )
 
 func SetConfig() {

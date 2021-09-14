@@ -83,8 +83,9 @@ import (
 	tmjson "github.com/tendermint/tendermint/libs/json"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 	appparams "github.com/worryFree56/cosmos-trade/app/params"
-	"github.com/worryFree56/cosmos-trade/docs"
+
 	// this line is used by starport scaffolding # stargate/app/moduleImport
+	cosmostradeclient "github.com/worryFree56/cosmos-trade/client"
 	"github.com/worryFree56/cosmos-trade/x/cosmostrade"
 	cosmostradekeeper "github.com/worryFree56/cosmos-trade/x/cosmostrade/keeper"
 	cosmostradetypes "github.com/worryFree56/cosmos-trade/x/cosmostrade/types"
@@ -557,7 +558,7 @@ func (app *App) RegisterAPIRoutes(apiSvr *api.Server, apiConfig config.APIConfig
 	ModuleBasics.RegisterGRPCGatewayRoutes(clientCtx, apiSvr.GRPCGatewayRouter)
 
 	// register app's OpenAPI routes.
-	apiSvr.Router.Handle("/static/openapi.yml", http.FileServer(http.FS(docs.Docs)))
+	apiSvr.Router.Handle("/static/openapi.yml", http.FileServer(http.FS(cosmostradeclient.Docs)))
 	apiSvr.Router.HandleFunc("/", openapiconsole.Handler(Name, "/static/openapi.yml"))
 }
 
